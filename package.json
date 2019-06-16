@@ -1,0 +1,42 @@
+{
+  "name": "realizer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@alifd/next": "^1.15.6",
+    "@icedesign/layout": "^1.0.8",
+    "@icedesign/notification": "^1.0.5",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "serialport": "^7.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron ./electron/main.js --inspect=5858"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^5.0.4",
+    "electron-rebuild": "^1.8.5",
+    "node-sass": "^4.12.0"
+  }
+}
