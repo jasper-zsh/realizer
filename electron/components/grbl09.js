@@ -120,13 +120,33 @@ class Grbl09Machine extends events.EventEmitter {
     }
 
     async move(x, y, z, relavant=true) {
+        await this._connector.send(`${this.moveCmd(x, y, z, relavant)}\n`);
+    }
+
+    moveCmd(x, y, z, relavant=true) {
         let moveCmd;
         if (relavant) {
             moveCmd = 'G91';
         } else {
             moveCmd = 'G90';
         }
-        await this._connector.send(`${moveCmd} ${this._unitCmd} X${x} Y${y} Z${z}\n`);
+        return `${moveCmd} ${this._unitCmd} X${x.toFixed(2)} Y${y.toFixed(2)} Z${z.toFixed(2)}`;
+    }
+
+    powerCmd(power) {
+        return `S${power}`;
+    }
+
+    pauseCmd(seconds) {
+        return `G4 P${seconds}`;
+    }
+
+    startCmd() {
+        return 'M3';
+    }
+
+    stopCmd() {
+        return 'M0';
     }
 }
 

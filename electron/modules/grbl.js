@@ -9,7 +9,8 @@ class GrblModule extends Module {
         this._connector = new ComConnector();
         this._machine = new Grbl09Machine({
             connector: this._connector
-        })
+        });
+        ctx.machine = this._machine;
     }
 
     init() {

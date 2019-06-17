@@ -10,6 +10,7 @@ ctx.app = app;
 const module_cls = [
     require('./modules/grbl'),
     require('./modules/com'),
+    require('./modules/laser'),
 ];
 
 let createWindow = () => {
